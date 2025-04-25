@@ -1,5 +1,5 @@
 function GetModelViewProjection(projectionMatrix, translationX, translationY, translationZ, rotationX, rotationY) {
-    var rz = 0; // rotazione su z che teniamo a zero
+    var rz = 0; // rotazione su z a zero
     var trans = [
         Math.cos(rz) * Math.cos(rotationY), Math.cos(rz) * Math.sin(rotationY) * Math.sin(rotationX) - Math.sin(rz) * Math.cos(rotationX), Math.cos(rz) * Math.sin(rotationY) * Math.cos(rotationX) + Math.sin(rz) * Math.sin(rotationX), 0,
         Math.sin(rz) * Math.cos(rotationY), Math.sin(rz) * Math.sin(rotationY) * Math.sin(rotationX) + Math.cos(rz) * Math.cos(rotationX), Math.sin(rz) * Math.sin(rotationY) * Math.cos(rotationX) - Math.cos(rz) * Math.sin(rotationX), 0,
@@ -12,7 +12,6 @@ function GetModelViewProjection(projectionMatrix, translationX, translationY, tr
 
 class MeshDrawer
 {
-    // costruttore inizializza tutto quello che serve
     constructor()
     {
         this.prog = InitShaderProgram(objVS, objFS);
